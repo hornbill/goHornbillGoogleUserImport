@@ -1,0 +1,136 @@
+{
+	"GoogleConf": {
+		"KeysafeID": 0,
+		"Customer": "",
+		"Domain": "yourdomain.com",
+		"Query": "name:'steve'",
+		"ShowDeleted": false
+	},
+	"User": {
+		"Operation":"Both",
+		"HornbillUserIDColumn": "h_user_id",
+		"AccountMapping": {
+			"UserType": "user",
+			"UserID": "{{.primaryEmail}}",
+			"LoginID": "{{.primaryEmail}}",
+			"EmployeeID": "{{.employeeId}}",
+			"Name": "{{.fullName}}",
+			"FirstName": "{{.givenName}}",
+			"LastName": "{{.familyName}}",
+			"JobTitle": "{{.jobTitle}}",
+			"Phone": "{{.workPhone}}",
+			"Email": "{{.primaryEmail}}",
+			"Mobile": "{{.mobilePhone}}",
+			"Language": "{{.languageCode}}",
+			"AbsenceMessage": "",
+			"TimeZone": "",
+			"DateTimeFormat": "",
+			"DateFormat": "",
+			"TimeFormat": "",
+			"CurrencySymbol": "",
+			"CountryCode": ""
+		},
+		"Type": {
+			"Action": "Both"
+		},
+		"Status": {
+			"Action": "Both",
+			"Value": "active"
+		},
+		"Role": {
+			"Action": "Both",
+			"Roles": [
+				"Basic User Role"
+			]
+		},
+		"ProfileMapping": {
+			"Manager": "{{.managerEmail}}",
+			"MiddleName": "",
+			"JobDescription": "{{.employeeType}}",
+			"Qualifications": "",
+			"Interests": "",
+			"Expertise": "",
+			"Dob": "",
+			"Nationality": "",
+			"Religion": "",
+			"HomeTelephone": "{{.homePhone}}",
+			"SocialNetworkA": "",
+			"SocialNetworkB": "",
+			"SocialNetworkC": "",
+			"SocialNetworkD": "",
+			"SocialNetworkE": "",
+			"SocialNetworkF": "",
+			"SocialNetworkG": "",
+			"SocialNetworkH": "",
+			"PersonalInterests": "",
+			"HomeAddress": "{{.homeAddress}}",
+			"PersonalBlog": "",
+			"Attrib1": "{{.creationTime}}",
+			"Attrib2": "{{.gender}}",
+			"Attrib3": "{{.lastLoginTime}}",
+			"Attrib4": "{{.newEmployeeType}}",
+			"Attrib5": "",
+			"Attrib6": "",
+			"Attrib7": "",
+			"Attrib8": ""
+		},
+		"Image": {
+			"Action": "Both"
+		},
+		"Site": {
+			"Action": "Both",
+			"Value": "{{.buildingId}}"
+		},
+		"Org": [
+			{
+				"Action":"Both",
+				"Value":"{{.department}}",
+				"Options": {
+					"Type":"department", 
+					"Membership":"member", 
+					"TasksView":false, 
+					"TasksAction":false, 
+					"OnlyOneGroupAssignment":true
+				}
+			},
+			{
+				"Action":"Both",
+				"Value":"{{.costCenter}}",
+				"Options": {
+					"Type":"costcenter", 
+					"Membership":"member", 
+					"TasksView":false, 
+					"TasksAction":false, 
+					"OnlyOneGroupAssignment":true
+				}
+			},
+			{
+				"Action":"Both",
+				"Value":"Some Google Company",
+				"Options": {
+					"Type":"company", 
+					"Membership":"member", 
+					"TasksView":false, 
+					"TasksAction":false, 
+					"OnlyOneGroupAssignment":true,
+					"SetAsHomeOrganisation": true
+				}
+			}
+		]
+	},
+	"Actions": [
+		{
+			"Action": "Replace",
+			"Value": "{{.employeeType}}",
+			"Output": "newEmployeeType",
+			"Options": {
+				"ReplaceOld": "String to replace",
+				"ReplaceNew": "String to replace the above with"
+			}
+		}
+	],
+	"Advanced": {
+		"LogLevel": 0,
+		"LogRetention": 7
+	}
+}
